@@ -26,7 +26,10 @@
 .pub-cache/
 .pub/
 /build/
-
+/linux/
+/macos/
+/windows/
+/web/
 # Android related
 **/android/**/gradle-wrapper.jar
 **/android/.gradle
