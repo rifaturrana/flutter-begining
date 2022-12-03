@@ -1,3 +1,4 @@
+import 'package:first_app/product_control.dart';
 import 'package:flutter/material.dart';
 
 import './products.dart';
@@ -20,20 +21,19 @@ class _ProductManagerState extends State<ProductManager> {
     super.initState();
   }
 
+  void _addProduct(String product) {
+    setState(() {
+      _products.add(product);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
           margin: const EdgeInsets.all(10.0),
-          child: ElevatedButton(
-              child: const Text('Add Product'),
-              onPressed: () {
-                setState(() {
-                  _products.add('Advanced Food Tester');
-                });
-                // print(_products);
-              }),
+          child: ProductControl(_addProduct),
         ),
         Products(_products),
       ],
